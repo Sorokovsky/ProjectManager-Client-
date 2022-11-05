@@ -7,6 +7,9 @@
   border-left: 1rem solid grey
   width: 350rem
   background: rgb(225,139,14)
+  nav > ul
+    *:last-child
+    border-bottom: 1rem solid #000000
 .open
   animation: open .5s
 .hide
@@ -19,8 +22,6 @@
   transition: .3s all ease
   &:hover
     background: rgba(124, 95, 8, 0.83)
-  &:last-child
-    border-bottom: 1rem solid #000000
   display: block
 @keyframes open
   from
