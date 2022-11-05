@@ -1,2 +1,3 @@
 import * as UserActionCreators from './user';
-export default {...UserActionCreators};
+import * as GlobalActionCreators from './global';
+export default {...UserActionCreators, ...GlobalActionCreators};
