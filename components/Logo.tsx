@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import {indexMeta} from "../data/neta";
+import {indexMeta} from "../data/meta";
 import logo from '../asssets/logo.svg';
 import styles from '../styles/Logo.module.sass';
 const Logo:React.FC = ():JSX.Element => {

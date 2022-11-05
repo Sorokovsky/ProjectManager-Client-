@@ -2,7 +2,8 @@ import {GlobalState} from "../../types/globalState";
 import {GlobalAction, GlobalTypesAction} from "../../types/globalAction";
 const initialState:GlobalState = {
     error:null,
-    loading:false
+    loading:false,
+    settings:false
 }
 export function globalReducer(state = initialState, action:GlobalAction):GlobalState{
     switch (action.type){
@@ -14,6 +15,9 @@ export function globalReducer(state = initialState, action:GlobalAction):GlobalS
             break;
         case GlobalTypesAction.CLEAR_ERROR:
             return {...state, error: null};
+            break;
+        case GlobalTypesAction.SET_SETTINGS:
+            return {...state, settings:action.payload};
             break;
         default:
             return state;

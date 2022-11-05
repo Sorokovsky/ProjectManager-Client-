@@ -1,0 +1,22 @@
+.sidebar
+  display: block
+  top: 0
+  left: 0
+  position: sticky
+  min-height: 100%
+  border-left: 1rem solid grey
+  width: 350rem
+.open
+  animation: open .5s
+.hide
+  animation: hide .5s
+@keyframes open
+  from
+    transform: translateX(100%)
+  to
+    transform: translateX(0)
+@keyframes hide
+  from
+    transform: translateX(0)
+  to
+    transform: translateX(100%)

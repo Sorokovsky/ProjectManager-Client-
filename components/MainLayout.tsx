@@ -3,6 +3,7 @@ import {Meta} from "../types/Meta";
 import Head from "next/head";
 import Header from "./Header";
 import Error from "./Error";
+import Settings from "./SettingsBar";
 interface iProps{
     children:React.ReactNode;
     meta:Meta;
@@ -21,6 +22,7 @@ const MainLayout:React.FC<iProps> = ({children, meta}):JSX.Element => {
                 <main>
                     {children}
                 </main>
+                <Settings />
             </div>
         </>
     )
