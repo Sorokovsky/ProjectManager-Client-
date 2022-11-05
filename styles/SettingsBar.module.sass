@@ -6,10 +6,22 @@
   min-height: 100%
   border-left: 1rem solid grey
   width: 350rem
+  background: rgb(225,139,14)
 .open
   animation: open .5s
 .hide
   animation: hide .5s
+.link
+  padding: 5rem 10rem
+  border-top: 1rem solid #000000
+  font-size: 25rem
+  color: #ffffff
+  transition: .3s all ease
+  &:hover
+    background: rgba(124, 95, 8, 0.83)
+  &:last-child
+    border-bottom: 1rem solid #000000
+  display: block
 @keyframes open
   from
     transform: translateX(100%)
