@@ -4,6 +4,9 @@ import styles from '../styles/Logo.module.sass';
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {indexMeta} from "../data/neta";
 const Avatar:React.FC = ():JSX.Element => {
+    const clickHandler = React.useCallback((e:React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+    }, []);
     const { user } = useTypedSelector(state => state.user);
     const [avatar, setAvatar] = React.useState<string>(defaultAvatar.src);
     const [alt, setAlt] = React.useState(indexMeta.description);
@@ -14,7 +17,7 @@ const Avatar:React.FC = ():JSX.Element => {
         }
     }, []);
     return (
-        <a href="#" className={styles.logo}>
+        <a href="#" onClick={clickHandler} className={styles.logo}>
             <img src={avatar} alt={alt}/>
         </a>
     )
