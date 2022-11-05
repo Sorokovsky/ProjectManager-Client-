@@ -2,6 +2,7 @@ import React from "react";
 import {Meta} from "../types/Meta";
 import Head from "next/head";
 import Header from "./Header";
+import Error from "./Error";
 interface iProps{
     children:React.ReactNode;
     meta:Meta;
@@ -15,6 +16,7 @@ const MainLayout:React.FC<iProps> = ({children, meta}):JSX.Element => {
                 <title>{meta.title}</title>
             </Head>
             <Header />
+            <Error />
             <div className="page">
                 <main>
                     {children}
