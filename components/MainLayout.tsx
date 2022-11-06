@@ -11,10 +11,12 @@ interface iProps{
     meta:Meta;
 }
 const MainLayout:React.FC<iProps> = ({children, meta}):JSX.Element => {
-    const { id } = useTypedSelector(state => state.user);
-    const { fetchUser } = useActions();
+    const { id, token } = useTypedSelector(state => state.user);
+    const { fetchUser, fetchUserId, setUserId, setToken } = useActions();
     React.useEffect(() => {
-        fetchUser(`${id}`);
+        setToken(JSON.stringify(localStorage.getItem('token')));
+        if (token) fetchUserId(token);
+        if(id) fetchUser(id);
     }, []);
     return (
         <>
