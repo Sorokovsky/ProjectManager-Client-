@@ -27,10 +27,10 @@ export function fetchUser(id:string){
 export function fetchUserId(token:string){
     return async (dispatch:Dispatch) =>{
         try {
-            const response = await useAxios().get<string>(`/auth/check/`, {
+            const response = await useAxios().get<{ id:string }>(`/auth/check/`, {
                 headers:{Authorization: `Bearer ${token}`}
             });
-            return dispatch(setUserId(response.data));
+            return dispatch(setUserId(response.data.id));
         }catch (e:AxiosError | any) {
             return dispatch(setError(e.response.data.message));
         }
