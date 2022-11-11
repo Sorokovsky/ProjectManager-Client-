@@ -15,7 +15,10 @@ const MyForm:React.FC<iProps> = ({children,
 
     }
     return (
-        <form action="#" ref={form} className={[styles.form].join(" ")} {...props}>
+        <form action="#" onSubmit={sendHandler}
+              ref={form} className={[styles.form].join(" ")}
+              {...props}
+        >
             {children}
         </form>
     )
